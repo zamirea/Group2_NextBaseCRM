@@ -1,4 +1,4 @@
-package com.nextBaseCRM;
+package com.nextBaseCRM.test.Zamire;
 
 import com.Utility.AutomationTest;
 import org.openqa.selenium.By;
