@@ -1,4 +1,4 @@
 package com.nextBaseCRM.Sofia;
 
-public class message {
+public class messageLogin {
 }
