@@ -23,6 +23,8 @@ public class ClockInOut {
         Thread.sleep(2000);
         driver.findElement(By.className("tm-popup-button-handler")).click();
 
+        driver.close();
+
 
     }
 }
