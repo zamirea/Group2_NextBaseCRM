@@ -19,11 +19,30 @@ public class ClockInOut {
 
         driver.findElement(By.id("timeman-container")).click();
         Thread.sleep(2000);
-        driver.findElement(By.className("tm-popup-button-handler")).click();
+        String actualText = driver.findElement(By.id("timeman-status")).getText();
+
+        if (actualText.equalsIgnoreCase("CLOCKED OUT")) {
+            driver.findElement(By.className("tm-popup-button-handler")).click();
+            Thread.sleep(2000);
+        }
+
+
+        String expectedTextWhenClockedIn = "Working";
+        actualText = driver.findElement(By.id("timeman-status")).getText();
+
+        if (expectedTextWhenClockedIn.equalsIgnoreCase(actualText)) {
+            System.out.println("Clock in verified");
+        } else {
+            System.out.println("Clock in not verified, you are already clocked in");
+        }
+        System.out.println(actualText);
+
+
         Thread.sleep(2000);
+
         driver.findElement(By.className("tm-popup-button-handler")).click();
 
-        driver.close();
+        //driver.close();
 
 
     }
