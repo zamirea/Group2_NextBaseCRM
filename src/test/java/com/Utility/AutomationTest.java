@@ -8,6 +8,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.util.List;
+
 public class AutomationTest {
 
     public static WebDriver getDriver(String browserType) {
@@ -39,7 +41,26 @@ public class AutomationTest {
         }
     }
 
+    public static void testResultEquals(List<String> expectedResult, List<String> actualResult) {
+        if (actualResult.equals(expectedResult)) {
+            System.out.println("Test Passed!");
+        } else {
+            System.out.println("expectedResult = " + expectedResult);
+            System.out.println("actualResult = " + actualResult);
+            System.out.println("Test Failed!");
+        }
+    }
+
     public static void testResultContains(String expectedResult, String actualResult) {
+        if (actualResult.contains(expectedResult)) {
+            System.out.println("Test Passed!");
+        } else {
+            System.out.println("expectedResult = " + expectedResult);
+            System.out.println("actualResult = " + actualResult);
+            System.out.println("Test Failed!");
+        }
+    }
+    public static void testResultContains(List<String> expectedResult, List<String> actualResult) {
         if (actualResult.contains(expectedResult)) {
             System.out.println("Test Passed!");
         } else {
