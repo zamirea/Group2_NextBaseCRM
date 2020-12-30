@@ -41,8 +41,16 @@ public class ClockInOut {
         Thread.sleep(2000);
 
         driver.findElement(By.className("tm-popup-button-handler")).click();
+        String actualTextWhenClockedOut = driver.findElement(By.id("timeman-status")).getText();
 
-        //driver.close();
+        if (actualTextWhenClockedOut.equalsIgnoreCase("Working")) {
+            driver.findElement(By.className("tm-popup-button-handler")).click();
+        }
+
+
+
+
+       // driver.close();
 
 
     }
