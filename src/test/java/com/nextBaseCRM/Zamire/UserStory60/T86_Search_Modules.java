@@ -35,6 +35,6 @@ public class T86_Search_Modules extends AutomationTest {
         searchBox.clear();
 
 
-
+    driver.close();
     }
 }
