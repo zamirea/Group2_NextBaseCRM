@@ -41,7 +41,11 @@ public class TodaysTasksInDailyPlan {
 
         Thread.sleep(2000);
 
-        driver.findElement(By.className("side-panel-close-inner")).click();
+        driver.findElement(By.xpath("//a[contains(@href, '/company/personal/user/493/tasks/task/edit/2773')]")).click();
+
+
+
+      //  driver.findElement(By.className("side-panel-close-inner")).click();
 
 //
 //        WebElement editButton = driver.findElement(By.xpath("//a[contains(@class,'task-view-button')]"));
@@ -49,10 +53,10 @@ public class TodaysTasksInDailyPlan {
 //        editButton.click();
 
 
-
-        ArrayList<WebElement> taskRemovebutton = new ArrayList<WebElement>(driver.findElements(By.xpath("//span[contains(@class,'menu-popup')]")));
-
-        taskRemovebutton.get(taskRemovebutton.size()-1).click();
+//
+//        ArrayList<WebElement> taskRemovebutton = new ArrayList<WebElement>(driver.findElements(By.xpath("//span[contains(@class,'menu-popup')]")));
+//
+//        taskRemovebutton.get(taskRemovebutton.size()-1).click();
 
 
     }
