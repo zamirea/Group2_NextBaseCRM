@@ -74,34 +74,22 @@ driver.switchTo().frame(frame);
 
         Thread.sleep(2000);
 
+        driver.findElement(By.xpath("//span[contains(@data-bx-id,'task-view-b-open-menu')]")).click();
+
+        driver.findElement(By.xpath("(//span[contains(@class,'menu-popup-item-text')])[5]")).click();
+
         driver.switchTo().defaultContent();
 
         driver.findElement(By.xpath("(//span[contains(@class,'side-panel-close')])[1]")).click();
+
+
+        driver.close();
 
         //driver.switchTo().defaultContent();
         //to get outside of the frame
 
 
 
-
-       // driver.findElement(By.xpath("//a[contains(@class,'task-view-button edit ui-btn ui-btn-link')]")).click();
-
-
-
-       // driver.findElement(By.xpath("//a[contains(@href, '/company/personal/user/493/tasks/task/edit/2773')]")).click();
-
-      //  driver.findElement(By.className("side-panel-close-inner")).click();
-
-//
-//        WebElement editButton = driver.findElement(By.xpath("//a[contains(@class,'task-view-button')]"));
-//
-//        editButton.click();
-
-
-//
-//        ArrayList<WebElement> taskRemovebutton = new ArrayList<WebElement>(driver.findElements(By.xpath("//span[contains(@class,'menu-popup')]")));
-//
-//        taskRemovebutton.get(taskRemovebutton.size()-1).click();
 
 
     }
