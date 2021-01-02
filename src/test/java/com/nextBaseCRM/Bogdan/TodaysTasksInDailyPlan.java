@@ -41,9 +41,54 @@ public class TodaysTasksInDailyPlan {
 
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath("//a[contains(@href, '/company/personal/user/493/tasks/task/edit/2773')]")).click();
+WebElement frame = driver.findElement(By.xpath("//*[starts-with(@id,'iframe')]"));
+driver.switchTo().frame(frame);
+     WebElement el =   driver.findElement(By.xpath("//a[contains(@class,'button edit')]"));
+
+        System.out.println(el.getText());
+        System.out.println(el.getAttribute("href"));
+        System.out.println("##################################");
+        el.click();
+        Thread.sleep(5000);
+
+        WebElement inputHeadline = driver.findElement(By.xpath("//input[contains(@data-bx-id,'task-edit-title')]"));
 
 
+        inputHeadline.sendKeys(" Cybertek school");
+
+        driver.findElement(By.xpath("(//input[contains(@data-bx-id, 'datepicker-display')])[1]")).click();
+
+        driver.findElement(By.xpath("(//span[contains(@class,'bx-calendar-button-text')])[1]")).click();
+
+        driver.findElement(By.xpath("//button[contains(@data-bx-id,'task-edit-submit')]")).click();
+
+        String actualTxt = driver.findElement(By.xpath("//span[contains(@id,'pagetitle')]")).getText();
+
+        String expectedTxt = "New tasks Cybertek school";
+
+        if (actualTxt.equalsIgnoreCase(expectedTxt)) {
+            System.out.println("User is able to edit the tasks");
+        } else  {
+            System.out.println("User is not able to edit tasks");
+        }
+
+        Thread.sleep(2000);
+
+        driver.switchTo().defaultContent();
+
+        driver.findElement(By.xpath("(//span[contains(@class,'side-panel-close')])[1]")).click();
+
+        //driver.switchTo().defaultContent();
+        //to get outside of the frame
+
+
+
+
+       // driver.findElement(By.xpath("//a[contains(@class,'task-view-button edit ui-btn ui-btn-link')]")).click();
+
+
+
+       // driver.findElement(By.xpath("//a[contains(@href, '/company/personal/user/493/tasks/task/edit/2773')]")).click();
 
       //  driver.findElement(By.className("side-panel-close-inner")).click();
 
