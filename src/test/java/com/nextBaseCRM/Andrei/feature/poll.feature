@@ -14,13 +14,24 @@ Feature: Poll verification
     Examples:
       | user      |
       | marketing |
-      | hr        |
-      | helpdesk  |
+#      | hr        |
+#      | helpdesk  |
 
 
-
-
-
+  @pool2
+  Scenario Outline: Users can use "vote agian" botton to slect different answer
+    Then I logIn as "<user>" user
+    And I create a poll
+    Then I select the first answer
+    And I verify that first answer should be selected
+    When I click Vote again
+    Then I select the second answer
+    And I verify that second answer should be selected
+    Examples:
+      | user      |
+      | marketing |
+#      | hr        |
+#      | helpdesk  |
 
 
 
