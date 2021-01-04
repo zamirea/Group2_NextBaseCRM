@@ -5,12 +5,19 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
+import java.util.concurrent.TimeUnit;
+
+
+import static com.Utility.AutomationTest.getDriver;
+
 
 public class Hooks {
 
     @Before(order = 0)
     public void scenarioStart() {
         AutomationTest.initial();
+        getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        getDriver().manage().deleteAllCookies();
 
     }
 

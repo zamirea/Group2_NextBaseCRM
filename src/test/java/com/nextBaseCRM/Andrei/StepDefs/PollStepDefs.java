@@ -122,4 +122,8 @@ public class PollStepDefs {
         }
         System.out.println(container.getText());
     }
+
+    @Then("I do somethink")
+    public void iDoSomethink() {
+    }
 }

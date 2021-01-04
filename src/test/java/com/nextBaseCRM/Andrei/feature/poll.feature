@@ -18,8 +18,8 @@ Feature: Poll verification
 #      | helpdesk  |
 
 
-  @pool2
-  Scenario Outline: Users can use "vote agian" botton to slect different answer
+  @poll2
+  Scenario Outline: Users can use "vote again" button to select different answer
     Then I logIn as "<user>" user
     And I create a poll
     Then I select the first answer
@@ -30,8 +30,8 @@ Feature: Poll verification
     Examples:
       | user      |
       | marketing |
-#      | hr        |
-#      | helpdesk  |
+      | hr        |
+      | helpdesk  |
 
 
 
