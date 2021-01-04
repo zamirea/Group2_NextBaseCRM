@@ -1,17 +1,21 @@
 @poll
 Feature: Poll verification
 
+  Background:
+    Given I go to "nextBaseCRM" page
+
+
   @poll1
-  Scenario: User can selected an answer
-    Given I go to  "nextBaseCRM" page
-    Then I logIn as "marketing" user
+  Scenario Outline: User can selected an answer
+    Then I logIn as "<user>" user
     And I create a poll
     Then I select the first answer
     And I verify that first answer should be selected
-
-
-
-
+    Examples:
+      | user      |
+      | marketing |
+      | hr        |
+      | helpdesk  |
 
 
 
