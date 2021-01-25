@@ -16,5 +16,11 @@ public class ForgotPassword {
         Thread.sleep(2000);
 
         driver.findElement(By.xpath("//a[@class='login-link-forgot-pass']")).click();
+        if(driver.getCurrentUrl().contains("forgot_password")){
+            System.out.println("FORGOT YOUR PASSWORD? link is working properly. PASSED!");
+        }else{
+            throw new RuntimeException("\"FORGOT YOUR PASSWORD? link is NOT working properly. ERROR\"");
+        }
+
     }
 }
