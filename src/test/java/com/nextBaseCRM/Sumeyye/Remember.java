@@ -17,5 +17,6 @@ public class Remember {
         Thread.sleep(2000);
 
         driver.findElement(By.xpath("//input[@type='checkbox']")).click();
+        driver.findElement(By.xpath("//input[@type='submit']")).click();
     }
 }
