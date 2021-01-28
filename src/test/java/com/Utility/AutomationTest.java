@@ -7,10 +7,31 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 public class AutomationTest {
+
+    public static WebDriver driver;
+
+    public static void initial() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+    }
+
+    public static WebDriver getDriver() {
+        return driver;
+    }
+
+
+    public static void teardown() {
+        driver.quit();
+    }
+
+    public static WebDriverWait driverWait(WebDriver driver, int time) {
+        return new WebDriverWait(driver, time);
+    }
 
     public static WebDriver getDriver(String browserType) {
         if (browserType.equalsIgnoreCase("chrome")) {
@@ -60,6 +81,7 @@ public class AutomationTest {
             System.out.println("Test Failed!");
         }
     }
+
     public static void testResultContains(List<String> expectedResult, List<String> actualResult) {
         if (actualResult.contains(expectedResult)) {
             System.out.println("Test Passed!");
@@ -69,4 +91,6 @@ public class AutomationTest {
             System.out.println("Test Failed!");
         }
     }
+
+
 }
